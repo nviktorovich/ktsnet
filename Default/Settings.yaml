@@ -1,0 +1,4 @@
+# "file_path": "/etc/network/interfaces" # путь к файлу, в котором прописаны настройки сети и содержится IP хоста
+"file_path": "interfaces" # путь к файлу interfaces
+"interface": "ens38" # интерфейс, предназначенный для работы в сети МПК
+"default_subnet": "100" # значение подсети по умолчанию
