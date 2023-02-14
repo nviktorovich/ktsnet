@@ -31,14 +31,14 @@ func InterfacesReplace(filePath, netInterface, newSubnet string) {
 			ipAddress := strings.Split(match, ".")
 			newIP := replaceSubnet(newSubnet, ipAddress)
 			jNewIP := strings.Join(newIP, ".")
-			lines[i] = fmt.Sprintf("address %s # %s", jNewIP, "IP для работы в сети МПК")
+			lines[i] = fmt.Sprintf("address %s", jNewIP)
 
 			correctInterfaceBlock = false
 			break
 		}
 	}
 	newData := strings.Join(lines, "\n")
-	err = ioutil.WriteFile("interfaces", []byte(newData), 0644)
+	err = ioutil.WriteFile(filePath, []byte(newData), 0644)
 	if err != nil {
 		log.Fatal(err)
 	}
